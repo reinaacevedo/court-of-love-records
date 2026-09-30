@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================
+     Court of Love Records — Production Company Landing Page
+     Built for GitHub Pages. Put these files in the repo root:
+       index.html, CNAME, mark-of-the-flame.jpg, never-met-always-known.jpg,
+       distance-within-time.jpg, reina-acevedo.jpg, shara-rayne.jpg
+
+     THINGS TO PERSONALIZE (search for the word  EDIT: ):
+       1. Social links      -> the <a> hrefs in the "Síguenos" section
+       2. Project links     -> the three project cards
+       4. Founder bios      -> the paragraphs in "Los Fundadores"
+       5. Share preview     -> og:image (add a 1200x630 preview.png)
+     ============================================================ -->
+
+<title>Court of Love Records · AI Music, Film & Stories</title>
+<meta name="description" content="Court of Love Records is a woman-led AI record label and production house creating AI music, films, and stories from a multicultural perspective." />
+
+<!-- Social share preview -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Court of Love Records · AI Music, Film & Stories" />
+<meta property="og:description" content="An AI production house for music, film, and stories, told from a multicultural perspective. A woman-led record label." />
+<meta property="og:url" content="https://courtofloverecords.com/" />
+<meta property="og:image" content="https://courtofloverecords.com/preview.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<link rel="canonical" href="https://courtofloverecords.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://courtofloverecords.com/preview.png" />
+
+<!-- Inline favicon: gold crown on a wine record -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%23180409'/%3E%3Ccircle cx='24' cy='24' r='13' fill='%23b01e34'/%3E%3Cpath d='M15 29l2-10 4.5 5L24 16l2.5 8 4.5-5 2 10z' fill='%23C9A24B'/%3E%3Crect x='15' y='30' width='18' height='3' rx='1' fill='%23C9A24B'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --ink:#240710;
+    --ink-2:#180409;
+    --velvet:#4b0f1e;
+    --crimson:#b01e34;
+    --crimson-soft:#d0576a;
+    --gold:#c9a24b;
+    --gold-glow:#ebc97e;
+    --parchment:#f2e6ce;
+    --parchment-dim:#cbb79a;
+    --letter:#f6eed8;
+    --maxw:1080px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; background:#120306}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 700px at 50% -10%, rgba(176,30,52,.35), transparent 60%),
+      radial-gradient(900px 600px at 85% 20%, rgba(201,162,75,.14), transparent 55%),
+      linear-gradient(180deg,var(--ink) 0%, var(--ink-2) 55%, #120306 100%);
+    background-attachment:fixed;
+    color:var(--parchment);
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:19px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Cpath d='M45 62C33 53 26 46 26 38.5 26 33.3 30 29 35.2 29 38.9 29 42.3 31 45 34.2 47.7 31 51.1 29 54.8 29 60 29 64 33.3 64 38.5 64 46 57 53 45 62Z' fill='none' stroke='%23c9a24b' stroke-width='1' opacity='.05'/%3E%3C/svg%3E");
+    background-size:90px 90px;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:1}
+  a{color:inherit}
+  img{max-width:100%}
+  ::selection{background:var(--crimson);color:var(--letter)}
+  :focus-visible{outline:2px solid var(--gold-glow); outline-offset:3px}
+
+  /* ---------- reusable bits ---------- */
+  .eyebrow{
+    font-family:"Cinzel", serif; font-weight:600; letter-spacing:.32em; text-transform:uppercase;
+    font-size:.72rem; color:var(--gold); display:inline-flex; align-items:center; gap:.7em;
+  }
+  .eyebrow::before,.eyebrow::after{content:""; width:26px; height:1px; background:linear-gradient(90deg,transparent,var(--gold))}
+  .eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+
+  .divider{display:block;margin:0 auto;width:210px;height:auto;color:var(--gold);opacity:.85}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .9s var(--ease), transform .9s var(--ease)}
+  .reveal.in{opacity:1; transform:none}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:20; backdrop-filter:blur(8px);
+    background:linear-gradient(180deg, rgba(18,3,6,.86), rgba(18,3,6,.35) 70%, transparent);
+    border-bottom:1px solid rgba(201,162,75,.18);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 26px; max-width:var(--maxw); margin:0 auto}
+  .brand{display:flex; align-items:center; gap:.6rem; text-decoration:none}
+  .brand .mark{width:28px; height:28px}
+  .brand span{font-family:"Cinzel",serif; font-weight:600; letter-spacing:.12em; font-size:.82rem; color:var(--parchment); text-transform:uppercase}
+  nav.menu{display:flex; gap:1.25rem}
+  nav.menu a{
+    font-family:"Cinzel",serif; font-size:.66rem; letter-spacing:.2em; text-transform:uppercase;
+    text-decoration:none; color:var(--parchment-dim); transition:color .3s;
+    padding:4px 0; border-bottom:1px solid transparent;
+  }
+  nav.menu a:hover,nav.menu a:focus-visible{color:var(--gold-glow); border-bottom-color:var(--gold)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; text-align:center; padding:8.5rem 0 6rem; overflow:hidden}
+  .hero .glow{
+    position:absolute; left:50%; top:40%; transform:translate(-50%,-50%);
+    width:min(760px,88vw); aspect-ratio:1; z-index:0; pointer-events:none;
+    background:radial-gradient(circle, rgba(235,201,126,.18), rgba(176,30,52,.12) 42%, transparent 66%);
+    filter:blur(6px);
+  }
+  /* the signature element: a slowly turning record with a crown label */
+  .hero .record{
+    position:absolute; left:88%; top:52%; width:min(620px,92vw); aspect-ratio:1;
+    transform:translate(-50%,-50%); z-index:0; pointer-events:none; opacity:.5;
+  }
+  .hero .record svg{width:100%; height:100%; animation:spin 38s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .inner{position:relative; z-index:2}
+  .hero .eyebrow{margin-bottom:1.8rem}
+  .hero h1{
+    font-family:"Cinzel", serif; font-weight:700;
+    font-size:clamp(2.5rem, 7.2vw, 5rem);
+    line-height:1.02; margin:.2rem 0 0; letter-spacing:.04em; color:var(--parchment);
+    text-shadow:0 2px 30px rgba(0,0,0,.6);
+  }
+  .hero h1 .a-gold{
+    display:block;
+    background:linear-gradient(180deg,#f3dd9e,var(--gold) 55%,#9c7a2c);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero .tagline{
+    font-family:"Pinyon Script", cursive; font-size:clamp(2.2rem, 6.4vw, 3.6rem);
+    color:var(--crimson-soft); margin:.6rem 0 .2rem; text-shadow:0 2px 18px rgba(176,30,52,.4);
+  }
+  .hero .sub{font-style:italic; color:var(--parchment-dim); font-size:1.15rem; max-width:36ch; margin:1.1rem auto 0}
+  .hero-cta{margin-top:2.6rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center}
+  .scrollcue{margin-top:3rem; color:var(--gold); opacity:.7; animation:float 2.6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+  /* ---------- sections ---------- */
+  section{position:relative; padding:6.5rem 0}
+  .section-head{text-align:center; margin-bottom:3rem}
+  .section-head h2{
+    font-family:"Cormorant Garamond", serif; font-style:italic; font-weight:500;
+    font-size:clamp(2rem,5vw,3.1rem); line-height:1.1; margin:1rem 0 .4rem; color:var(--letter);
+  }
+  .section-head .es{font-family:"EB Garamond",serif; font-style:italic; color:var(--crimson-soft); font-size:1.05rem}
+
+  /* --- what we do --- */
+  .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:0; max-width:1000px; margin:0 auto;
+    border-top:1px solid rgba(201,162,75,.3); border-bottom:1px solid rgba(201,162,75,.3)}
+  .pillar{padding:2.4rem 2rem 2.6rem; text-align:center}
+  .pillar + .pillar{border-left:1px solid rgba(201,162,75,.22)}
+  .pillar svg{width:44px; height:44px; color:var(--gold); margin-bottom:1rem}
+  .pillar h3{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.75rem; line-height:1.1; color:var(--letter); margin:0 0 .8rem}
+  .pillar p{color:var(--parchment-dim); font-size:1rem; line-height:1.75; margin:0}
+
+  /* --- the stack, set as album liner notes --- */
+  .liner{
+    max-width:720px; margin:0 auto; position:relative;
+    background:linear-gradient(180deg,#fbf4e2,#f3e7cd); color:#3a281c;
+    border-radius:3px; padding:3.2rem 3.2rem 2.8rem;
+    box-shadow:0 40px 80px rgba(0,0,0,.55), inset 0 0 60px rgba(180,140,90,.25);
+  }
+  .liner::after{content:""; position:absolute; inset:0; border-radius:3px; pointer-events:none; box-shadow:inset 0 0 0 1px rgba(120,80,40,.25)}
+  .liner-head{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; border-bottom:1px solid rgba(122,18,36,.25); padding-bottom:1rem; margin-bottom:1.6rem}
+  .liner-head h3{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.6rem; color:#7a1224; margin:0}
+  .liner-head span{font-family:"Cinzel",serif; font-weight:600; font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; color:#8a6a3a}
+  .credits{margin:0; padding:0}
+  .credit{padding:1rem 0; border-bottom:1px dashed rgba(122,18,36,.18)}
+  .credit:last-child{border-bottom:0}
+  .credit-line{display:flex; align-items:baseline; gap:.6rem}
+  .credit dt{font-family:"Cinzel",serif; font-weight:600; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#5a3c28; white-space:nowrap}
+  .credit .leader{flex:1; border-bottom:1px dotted rgba(90,60,40,.45); transform:translateY(-4px); min-width:1.5rem}
+  .credit .tool{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.45rem; color:#7a1224; white-space:nowrap}
+  .credit dd{margin:.35rem 0 0; font-size:1rem; line-height:1.7; color:#4a3424}
+  .liner-foot{margin:1.6rem 0 0; font-style:italic; color:#5a3c28; font-size:.98rem}
+
+  /* --- projects --- */
+  .films{display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem}
+  .film-card{
+    display:flex; flex-direction:column; overflow:hidden; border-radius:9px;
+    background:linear-gradient(180deg, rgba(75,15,30,.4), rgba(36,7,16,.55));
+    border:1px solid rgba(201,162,75,.26); box-shadow:0 20px 40px rgba(0,0,0,.4);
+    transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
+  }
+  .film-card:hover{transform:translateY(-6px); border-color:var(--gold); box-shadow:0 30px 56px rgba(0,0,0,.55)}
+  .film-thumb{position:relative; display:block; aspect-ratio:16/9; overflow:hidden}
+  .film-thumb img{position:relative; z-index:1; width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s var(--ease)}
+  .film-card:hover .film-thumb img{transform:scale(1.06)}
+  .film-thumb::after{content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, transparent 55%, rgba(20,3,6,.55)); pointer-events:none}
+  /* poster shown until a real thumbnail is added */
+  .poster{position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:flex-start; text-align:left; padding:0 0 1rem 1.1rem;
+    background:radial-gradient(circle at 70% 26%, rgba(242,230,206,.9) 0 5%, rgba(242,230,206,.18) 6%, transparent 22%),
+      linear-gradient(180deg,#0d1a2e 0%, #0a1322 60%, #06222a 100%)}
+  .poster span{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.5rem; color:var(--letter); line-height:1.05; text-shadow:0 2px 12px rgba(0,0,0,.6); position:relative; z-index:2}
+  .film-badge{
+    position:absolute; top:.9rem; left:.9rem; z-index:2;
+    font-family:"Cinzel",serif; font-weight:600; font-size:.56rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--parchment); background:rgba(20,3,6,.6); border:1px solid rgba(201,162,75,.5);
+    padding:.35rem .7rem; border-radius:999px; backdrop-filter:blur(3px);
+  }
+  .film-play{
+    position:absolute; z-index:2; left:50%; top:50%; transform:translate(-50%,-50%) scale(.9);
+    width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:rgba(201,162,75,.92); color:var(--ink); opacity:.85; box-shadow:0 8px 24px rgba(0,0,0,.5);
+    transition:transform .3s var(--ease), opacity .3s;
+  }
+  .film-play svg{width:22px; height:22px; margin-left:3px}
+  .film-card:hover .film-play{transform:translate(-50%,-50%) scale(1.08); opacity:1}
+  .film-body{padding:1.4rem 1.4rem 1.6rem; display:flex; flex-direction:column; flex:1}
+  .film-kicker{font-family:"Cinzel",serif; font-weight:600; letter-spacing:.14em; text-transform:uppercase; font-size:.58rem; color:var(--gold); margin-bottom:.6rem}
+  .film-title{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:1.55rem; line-height:1.1; color:var(--letter); margin:0 0 .7rem}
+  .film-logline{color:var(--parchment-dim); font-size:.96rem; line-height:1.7; margin:0 0 1.3rem; flex:1}
+  .film-actions{display:flex; flex-direction:column; align-items:flex-start; gap:.7rem}
+  .film-note{font-size:.78rem; color:var(--parchment-dim); font-style:italic}
+
+  /* --- mission --- */
+  .mission{max-width:820px; margin:0 auto; text-align:center}
+  .mission .crown{width:54px; height:auto; color:var(--gold); margin-bottom:1.4rem}
+  .mission .mission-statement{
+    max-width:none;
+    font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:500;
+    font-size:clamp(1.9rem,4.6vw,2.9rem); line-height:1.2; color:var(--letter); margin:1.2rem 0 1.6rem;
+  }
+  .mission .mission-statement em{font-style:italic; color:var(--gold-glow)}
+  .mission p{color:var(--parchment-dim); font-size:1.08rem; line-height:1.85; max-width:620px; margin:0 auto}
+  .badge-row{display:flex; flex-wrap:wrap; justify-content:center; gap:.7rem; margin-top:2rem}
+  .chip{font-family:"Cinzel",serif; font-weight:600; font-size:.58rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--gold); border:1px solid rgba(201,162,75,.45); border-radius:999px; padding:.45rem .9rem; background:rgba(75,15,30,.35)}
+
+  /* --- roster --- */
+  .artist{display:grid; grid-template-columns:300px 1fr; gap:3.4rem; align-items:center; max-width:880px; margin:0 auto;
+    padding:2.4rem; border-radius:10px; border:1px solid rgba(201,162,75,.26);
+    background:linear-gradient(180deg, rgba(75,15,30,.38), rgba(36,7,16,.5)); box-shadow:0 30px 60px rgba(0,0,0,.4)}
+  .artist-photo{aspect-ratio:4/5; border-radius:8px; overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(201,162,75,.45), 0 0 0 8px rgba(201,162,75,.08)}
+  .artist-photo img{width:100%; height:100%; object-fit:cover; display:block}
+  .role{font-family:"Cinzel",serif; font-weight:600; letter-spacing:.24em; text-transform:uppercase; font-size:.64rem; color:var(--gold); display:block; margin-bottom:.6rem}
+  .person-name{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600; font-size:clamp(2rem,5vw,2.7rem); line-height:1.05; color:var(--letter); margin:0 0 1.1rem}
+  .artist p{color:var(--parchment-dim); font-size:1.03rem; line-height:1.8; margin:0 0 1.1rem}
+  .artist .badge-row{justify-content:flex-start; margin:0 0 1.2rem}
+  .artist-quote{margin:.4rem 0 1.2rem; padding:.2rem 0 .2rem 1.1rem; border-left:2px solid var(--gold);
+    font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:500; font-size:1.3rem; line-height:1.4; color:var(--letter)}
+  .artist-quote cite{display:block; margin-top:.5rem; font-style:normal; font-family:"Cinzel",serif; font-weight:600;
+    font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold)}
+  .artist .signature{font-family:"Pinyon Script",cursive; font-size:2.6rem; line-height:1; color:var(--crimson-soft); margin:.2rem 0 1.3rem}
+  .artist + .artist{margin-top:2.4rem}
+  .artist.flip{grid-template-columns:1fr 300px}
+  .artist.flip .artist-photo{order:2}
+  .mini-socials{display:flex; flex-wrap:wrap; gap:.7rem; margin-top:.2rem}
+  .mini-socials.center{justify-content:center; margin-top:1.4rem}
+  .mini{width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    color:var(--gold-glow); border:1px solid rgba(201,162,75,.45);
+    background:radial-gradient(circle at 35% 30%, #6a1526, #3a0a14 75%);
+    box-shadow:0 8px 18px rgba(0,0,0,.4); transition:transform .25s var(--ease), border-color .25s, box-shadow .25s}
+  .mini svg{width:19px; height:19px}
+  .mini:hover,.mini:focus-visible{transform:translateY(-3px); border-color:var(--gold); box-shadow:0 12px 24px rgba(176,30,52,.35)}
+  .roster-note{text-align:center; font-style:italic; color:var(--parchment-dim); font-size:1.02rem; margin:2.2rem 0 0}
+  .roster-note a{color:var(--gold-glow); text-decoration:none; border-bottom:1px solid rgba(201,162,75,.45); margin-left:.3rem; white-space:nowrap}
+  .roster-note a:hover{border-bottom-color:var(--gold-glow)}
+  .artist p.lead{font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:500; font-size:1.35rem; line-height:1.4; color:var(--letter)}
+
+  /* --- founder --- */
+  .founder{max-width:760px; margin:0 auto; text-align:center}
+  .monogram{width:118px; height:118px; margin:0 auto 1.4rem; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 35% 30%, #6a1526, #3a0a14 75%); border:1px solid rgba(201,162,75,.55);
+    box-shadow:0 16px 34px rgba(0,0,0,.5), inset 0 0 20px rgba(0,0,0,.5), 0 0 0 7px rgba(201,162,75,.07);
+    font-family:"Cinzel",serif; font-weight:700; font-size:2.3rem; letter-spacing:.06em; color:var(--gold-glow)}
+  .founder p{color:var(--parchment-dim); font-size:1.08rem; line-height:1.85; margin:0 auto 1.1rem; max-width:640px}
+  .moniker{font-family:"Cinzel",serif; font-weight:600; letter-spacing:.08em; color:var(--gold-glow)}
+  .founder-sep{display:block; width:80px; height:auto; margin:4rem auto; color:var(--gold); opacity:.8}
+  .belief{margin:3.6rem auto 0; max-width:680px; position:relative; padding:2.2rem 2rem 1.8rem;
+    border-bottom:1px solid rgba(201,162,75,.35);
+    background:linear-gradient(90deg, rgba(201,162,75,.35) 0 43%, transparent 43% 57%, rgba(201,162,75,.35) 57%) top / 100% 1px no-repeat}
+  .belief::before{content:"\201C"; position:absolute; left:50%; top:-.62em; transform:translateX(-50%);
+    font-family:"Cormorant Garamond",serif; font-size:4.4rem; line-height:1; color:var(--gold); padding:0 .3em}
+  .belief blockquote{margin:0; font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:500;
+    font-size:clamp(1.4rem,3.4vw,1.9rem); line-height:1.35; color:var(--letter)}
+  .belief cite{display:block; margin-top:1.1rem; font-style:normal; font-family:"Cinzel",serif; font-weight:600;
+    font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold)}
+
+  /* --- inquiries --- */
+  .inquiry{max-width:640px; margin:0 auto; text-align:center; padding:3rem 2rem;
+    border:1px solid rgba(201,162,75,.35); border-radius:4px; position:relative;
+    background:linear-gradient(180deg, rgba(75,15,30,.35), rgba(36,7,16,.2))}
+  .inquiry::before{content:""; position:absolute; inset:7px; border:1px solid rgba(201,162,75,.14); border-radius:2px; pointer-events:none}
+  .inquiry p{color:var(--parchment-dim); font-size:1.12rem; margin:0 0 .6rem}
+  .inquiry .email{display:inline-block; font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:600;
+    font-size:clamp(1.5rem,4.6vw,2.3rem); color:var(--gold-glow); text-decoration:none; word-break:break-word;
+    border-bottom:1px solid rgba(201,162,75,.4); margin-bottom:1.9rem; transition:border-color .3s}
+  .inquiry .email:hover{border-bottom-color:var(--gold-glow)}
+  .inquiry .fine{font-size:.86rem; font-style:italic; margin:1.3rem 0 0}
+
+  /* buttons */
+  .btn-gold,.btn-ghost{
+    display:inline-flex; align-items:center; gap:.7rem; text-decoration:none; cursor:pointer;
+    font-family:"Cinzel",serif; font-weight:600; font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+    padding:1rem 1.9rem; border-radius:2px; border:1px solid var(--gold);
+    transition:transform .25s var(--ease), box-shadow .25s, background .25s;
+  }
+  .btn-gold{color:var(--ink); background:linear-gradient(180deg,var(--gold-glow),var(--gold))}
+  .btn-ghost{color:var(--gold); background:transparent}
+  .btn-gold svg,.btn-ghost svg{width:18px; height:18px}
+  .btn-gold:hover,.btn-gold:focus-visible{transform:translateY(-2px); box-shadow:0 12px 28px rgba(201,162,75,.35)}
+  .btn-ghost:hover,.btn-ghost:focus-visible{transform:translateY(-2px); background:rgba(201,162,75,.1); box-shadow:0 12px 26px rgba(201,162,75,.18)}
+  .btn-gold.sm,.btn-ghost.sm{padding:.65rem 1.1rem; font-size:.62rem}
+
+  /* --- follow / social --- */
+  .socials{display:flex; flex-wrap:wrap; justify-content:center; gap:1.6rem; margin-top:2.4rem}
+  .seal{
+    --sz:96px; width:var(--sz); height:var(--sz); border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.35rem;
+    text-decoration:none; color:var(--gold-glow);
+    background:radial-gradient(circle at 35% 30%, #6a1526, #3a0a14 75%);
+    border:1px solid rgba(201,162,75,.45);
+    box-shadow:0 12px 26px rgba(0,0,0,.45), inset 0 0 18px rgba(0,0,0,.5);
+    transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
+  }
+  .seal svg{width:30px; height:30px}
+  .seal .label{font-family:"Cinzel",serif; font-size:.52rem; letter-spacing:.14em; text-transform:uppercase; color:var(--parchment-dim)}
+  .seal:hover,.seal:focus-visible{transform:translateY(-6px) rotate(-3deg); border-color:var(--gold); box-shadow:0 18px 34px rgba(176,30,52,.4), 0 0 24px rgba(201,162,75,.25)}
+
+  /* ---------- footer ---------- */
+  footer{text-align:center; padding:3.5rem 0 3rem; border-top:1px solid rgba(201,162,75,.16); margin-top:2rem}
+  footer .mark{width:34px; height:34px; opacity:.85; margin-bottom:.6rem}
+  footer .fscript{font-family:"Pinyon Script",cursive; font-size:1.7rem; color:var(--crimson-soft)}
+  footer .fine{font-size:.78rem; color:var(--parchment-dim); letter-spacing:.06em; margin-top:.6rem}
+  footer a.top{display:inline-block; margin-top:1.2rem; font-family:"Cinzel",serif; font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid transparent}
+  footer a.top:hover{border-bottom-color:var(--gold)}
+
+  .petal{position:fixed; bottom:-30px; z-index:0; pointer-events:none; will-change:transform,opacity}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .films{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:1020px){
+    .brand span{display:none}
+  }
+  @media (max-width:760px){
+    .brand span{display:inline}
+    body{font-size:18px}
+    nav.menu{display:none}
+    .hero{padding:6rem 0 4rem}
+    .hero .record{left:50%; top:40%; opacity:.2}
+    .pillars{grid-template-columns:1fr}
+    .pillar + .pillar{border-left:0; border-top:1px solid rgba(201,162,75,.22)}
+    .films{grid-template-columns:1fr}
+    .liner{padding:2.4rem 1.4rem 2.2rem}
+    .liner-head{flex-direction:column; gap:.3rem}
+    .credit-line{flex-wrap:wrap}
+    .credit .leader{display:none}
+    .credit .tool{width:100%; font-size:1.3rem}
+    .artist{grid-template-columns:1fr; gap:2rem; justify-items:center; text-align:center; padding:1.8rem 1.3rem}
+    .artist-photo{max-width:250px; width:100%}
+    .artist .badge-row{justify-content:center}
+    .artist.flip{grid-template-columns:1fr}
+    .artist.flip .artist-photo{order:0}
+    .artist .mini-socials{justify-content:center}
+    .artist-quote{border-left:0; padding:1rem 0 0; border-top:1px solid rgba(201,162,75,.35)}
+    .belief{padding:2.2rem .6rem 1.8rem}
+    .inquiry{padding:2.4rem 1.2rem}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; scroll-behavior:auto !important}
+    .reveal{opacity:1; transform:none; transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- reusable crown-on-record mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="22.5" fill="#180409" stroke="#c9a24b" stroke-width="1"/>
+      <circle cx="24" cy="24" r="17" fill="none" stroke="#c9a24b" stroke-opacity=".25"/>
+      <circle cx="24" cy="24" r="13" fill="#b01e34"/>
+      <path d="M15 29l2-10 4.5 5L24 16l2.5 8 4.5-5 2 10z" fill="#c9a24b"/>
+      <rect x="15" y="30" width="18" height="3" rx="1" fill="#c9a24b"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <svg class="mark"><use href="#mark"/></svg>
+      <span>Court of Love Records</span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#mission">Misión</a>
+      <a href="#what-we-do">Lo Que Hacemos</a>
+      <a href="#stack">Herramientas</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#roster">Artistas</a>
+      <a href="#founders">Fundadores</a>
+      <a href="#inquiries">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-label="Introduction">
+  <div class="glow"></div>
+
+  <div class="record" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <defs>
+        <radialGradient id="vinyl" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#2a0a12"/><stop offset="1" stop-color="#0c0204"/>
+        </radialGradient>
+        <path id="labelArc" d="M200 200 m-52 0 a52 52 0 1 1 104 0 a52 52 0 1 1 -104 0"/>
+      </defs>
+      <circle cx="200" cy="200" r="198" fill="url(#vinyl)" stroke="#c9a24b" stroke-opacity=".5"/>
+      <g fill="none" stroke="#c9a24b" stroke-opacity=".16">
+        <circle cx="200" cy="200" r="186"/><circle cx="200" cy="200" r="174"/><circle cx="200" cy="200" r="162"/>
+        <circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="138"/><circle cx="200" cy="200" r="126"/>
+        <circle cx="200" cy="200" r="114"/><circle cx="200" cy="200" r="102"/><circle cx="200" cy="200" r="90"/>
+      </g>
+      <path d="M60 110 A170 170 0 0 1 130 44" stroke="#ebc97e" stroke-opacity=".35" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <circle cx="200" cy="200" r="74" fill="#b01e34"/>
+      <circle cx="200" cy="200" r="74" fill="none" stroke="#c9a24b" stroke-width="2"/>
+      <text font-family="Cinzel, serif" font-size="11" letter-spacing="3" fill="#f2e6ce" fill-opacity=".9">
+        <textPath href="#labelArc">COURT OF LOVE RECORDS · NEW YORK · </textPath>
+      </text>
+      <path d="M178 212l5-24 10 11 7-17 7 17 10-11 5 24z" fill="#c9a24b"/>
+      <rect x="178" y="214" width="44" height="6" rx="1.5" fill="#c9a24b"/>
+      <circle cx="200" cy="200" r="4" fill="#0c0204"/>
+    </svg>
+  </div>
+
+  <div class="wrap inner">
+    <span class="eyebrow">AI Music &middot; AI Film &middot; AI Stories</span>
+    <h1>Court of Love <span class="a-gold">Records</span></h1>
+    <p class="tagline">Where passion has the final word</p>
+    <p class="sub">An AI production house for music, film, and stories, told from a multicultural perspective.</p>
+
+    <div class="hero-cta">
+      <a class="btn-gold" href="#projects">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        See our work
+      </a>
+      <a class="btn-ghost" href="#inquiries">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>
+        Work with us
+      </a>
+    </div>
+
+    <div class="scrollcue" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MISSION ===================== -->
+<section id="mission">
+  <div class="wrap">
+    <div class="mission reveal">
+      <span class="eyebrow" lang="es">Nuestra Misión &middot; Our Mission</span>
+      <p class="mission-statement">A <em>woman-led</em> record label bringing passionate stories, songs, and films to life through a multicultural lens.</p>
+      <p>We champion Latin, Caribbean, and Asian voices, East and South, with characters who carry their heritage with them: not as a backdrop, but as the heart of the story.</p>
+      <div class="badge-row" aria-label="What we stand for">
+        <span class="chip">Woman-Led</span>
+        <span class="chip">Multicultural</span>
+        <span class="chip">Passion First</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== WHAT WE DO ===================== -->
+<section id="what-we-do">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Lo Que Hacemos &middot; What We Do</span>
+      <h2>Three crafts, one court</h2>
+      <p class="es" lang="es">Música, cine e historias.</p>
+    </div>
+
+    <div class="pillars reveal">
+      <div class="pillar">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="12" stroke-opacity=".5"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
+        <h3>AI Music</h3>
+        <p>Original songs and reimagined covers that move between flamenco, bolero, Bollywood rhythms, rock, metal, and dark pop, sung in English, Spanish, and Hindi.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="14" width="28" height="22" rx="2"/><path d="M33 21l10-6v18l-10-6z"/><path d="M5 14l4-6h8l-4 6M17 14l4-6h8l-4 6" stroke-opacity=".6"/></svg>
+        <h3>AI Filmmaking</h3>
+        <p>Cinematic music videos, short films, and episodic series with a recurring cast who look like themselves from the first shot to the last.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 10.5A2.5 2.5 0 0110.5 8H22v31H10.5A2.5 2.5 0 018 36.5zM40 10.5A2.5 2.5 0 0037.5 8H26v31h11.5a2.5 2.5 0 002.5-2.5z"/><path d="M24 23c-2.8-2.1-4.5-3.8-4.5-5.8 0-1.5 1.1-2.6 2.5-2.6 1 0 1.6.5 2 1.2.4-.7 1-1.2 2-1.2 1.4 0 2.5 1.1 2.5 2.6 0 2-1.7 3.7-4.5 5.8z" fill="currentColor" stroke="none"/></svg>
+        <h3>AI Stories</h3>
+        <p>Romance, fantasy, and drama built as whole worlds, with characters, lore, and seasons planned so a story can live on the page and on screen.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== THE STACK ===================== -->
+<section id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Herramientas &middot; Our Stack</span>
+      <h2>The tools behind the work</h2>
+      <p class="es" lang="es">Las manos detrás de la magia.</p>
+    </div>
+
+    <div class="liner reveal">
+      <div class="liner-head">
+        <h3>Liner notes</h3>
+        <span>Power users of</span>
+      </div>
+      <dl class="credits">
+        <div class="credit">
+          <div class="credit-line"><dt>Film &amp; image</dt><span class="leader" aria-hidden="true"></span><span class="tool">Higgsfield AI</span></div>
+          <dd>Character-consistent stills and cinematic video. Our cast keeps the same face across every scene, series, and music video.</dd>
+        </div>
+        <div class="credit">
+          <div class="credit-line"><dt>Music</dt><span class="leader" aria-hidden="true"></span><span class="tool">Suno</span></div>
+          <dd>Song production, arrangement, and vocals, built from our founder's own voice and taken from first demo to finished track.</dd>
+        </div>
+        <div class="credit">
+          <div class="credit-line"><dt>Story &amp; direction</dt><span class="leader" aria-hidden="true"></span><span class="tool">Claude</span></div>
+          <dd>Story development, series lore, shot lists, and the prompt direction that turns a treatment into scenes.</dd>
+        </div>
+        <div class="credit">
+          <div class="credit-line"><dt>Ideas &amp; words</dt><span class="leader" aria-hidden="true"></span><span class="tool">ChatGPT</span></div>
+          <dd>Brainstorming, world-building, and copy for everything that goes out the door.</dd>
+        </div>
+      </dl>
+      <!-- EDIT: adjust this line if it doesn't match how you work -->
+      <p class="liner-foot">Every project is guided by human hands from first idea to final cut. The tools help us build faster; the stories are ours.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== RECENT PROJECTS ===================== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Proyectos &middot; Recent Work</span>
+      <h2>Recent releases from the court</h2>
+      <p class="es" lang="es">Lo más reciente.</p>
+    </div>
+
+    <div class="films reveal">
+      <!-- EDIT: project 1 -->
+      <article class="film-card">
+        <a class="film-thumb" href="https://www.youtube.com/playlist?list=PLXm4555Echi0" target="_blank" rel="noopener" aria-label="Watch Mark of the Flame">
+          <img src="mark-of-the-flame.jpg" width="1280" height="714" alt="Mark of the Flame, two sorceresses wielding fire and blood magic against monsters" />
+          <span class="film-badge">Mini Series</span>
+          <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="film-body">
+          <span class="film-kicker">AI Film &middot; Fantasy Drama</span>
+          <h3 class="film-title">Mark of the Flame</h3>
+          <p class="film-logline">A Guild Wars&ndash;inspired fantasy series about a young queen, her sworn friend, and the villain her careless wish invites to the castle gates.</p>
+          <div class="film-actions">
+            <a class="btn-gold sm" href="https://www.youtube.com/playlist?list=PLXm4555Echi0" target="_blank" rel="noopener">Watch the series</a>
+            <span class="film-note">Higgsfield &amp; YouTube</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- EDIT: project 2 -->
+      <article class="film-card">
+        <a class="film-thumb" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener" aria-label="Watch Never Met, Always Known">
+          <img src="never-met-always-known.jpg" width="1280" height="720" alt="Never Met, Always Known, two gamers meeting face to face" />
+          <span class="film-badge">Short Film</span>
+          <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="film-body">
+          <span class="film-kicker">Higgsfield Global Film Festival 2026</span>
+          <h3 class="film-title">Never Met, Always Known</h3>
+          <p class="film-logline">Two gamers, one MMORPG, never met in real life, until a gaming club's grand opening in New York City puts them face to face.</p>
+          <div class="film-actions">
+            <a class="btn-gold sm" href="https://higgsfield.ai/@reinaacevedo/projects/never-met-always-known" target="_blank" rel="noopener">Watch the film</a>
+            <span class="film-note">Festival entry</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- EDIT: project 3. Swap the href for the direct video link. -->
+      <article class="film-card">
+        <a class="film-thumb" href="https://youtube.com/@ReinaAcevedoOfficial" target="_blank" rel="noopener" aria-label="Watch Distance Within Time (Reimagined)">
+          <img src="distance-within-time.jpg" width="1280" height="714" alt="Distance Within Time (Reimagined), Reina and Dante face to face against a stone wall under a stormy sky" />
+          <span class="film-badge">Music Video</span>
+          <span class="film-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="film-body">
+          <span class="film-kicker">AI Music &middot; AI Film</span>
+          <h3 class="film-title">Distance Within Time (Reimagined)</h3>
+          <p class="film-logline">A storm traps two former lovers inside a guarita in Old San Juan, and the night ends under a full moon on Fajardo's glowing bay.</p>
+          <div class="film-actions">
+            <a class="btn-gold sm" href="https://youtube.com/@ReinaAcevedoOfficial" target="_blank" rel="noopener">Watch the video</a>
+            <span class="film-note">A cover of Shara Rayne</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== ROSTER ===================== -->
+<section id="roster">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Nuestros Artistas &middot; The Roster</span>
+      <h2>Meet the roster</h2>
+      <p class="es" lang="es">Las voces de la corte.</p>
+    </div>
+
+    <article class="artist reveal">
+      <div class="artist-photo">
+        <img src="reina-acevedo.jpg" width="800" height="1000" alt="Reina Acevedo in a red silk robe and crown, writing at her desk by lamplight" />
+      </div>
+      <div>
+        <span class="role">AI Creative Director &middot; Artist, Author &amp; Filmmaker</span>
+        <h3 class="person-name">Reina Acevedo</h3>
+        <div class="badge-row">
+          <span class="chip">Music</span>
+          <span class="chip">Books</span>
+          <span class="chip">Film</span>
+        </div>
+        <!-- EDIT: Reina's roster bio -->
+        <p class="lead">The hopeless-romantic side of our founder, DC, brought to life with AI.</p>
+        <p>Reina is the label's AI creative director and the first artist on its roster. Her voice starts with DC's own vocals, refined with Suno, and she sings in English, Spanish, and Hindi. She is the author of the romance novel <em>Signed in Blood</em> and directs and stars in our films, from the fantasy series <em>Mark of the Flame</em> to the music video <em>Distance Within Time (Reimagined)</em>.</p>
+        <p>Her story draws on DC's own Puerto Rican and Indo-Guyanese roots, and her music moves between flamenco, bolero, Bollywood rhythms, and dark pop.</p>
+        <blockquote class="artist-quote">&ldquo;Reina sings the languages I grew up hearing but never learned to speak.&rdquo;<cite>DC, Founder</cite></blockquote>
+        <p class="signature">Reina</p>
+        <a class="btn-ghost sm" href="https://reinaacevedo.github.io/" target="_blank" rel="noopener">Visit Reina's site</a>
+      </div>
+    </article>
+
+    <article class="artist flip reveal">
+      <div class="artist-photo">
+        <img src="shara-rayne.jpg" width="800" height="1000" alt="Shara Rayne with long red hair, headphones around her neck, in a black knit sweater and leather coat" />
+      </div>
+      <div>
+        <span class="role">AI Recording Artist</span>
+        <h3 class="person-name">Shara Rayne</h3>
+        <div class="badge-row">
+          <span class="chip">Music</span>
+          <span class="chip">Film</span>
+        </div>
+        <!-- EDIT: Shara's roster bio -->
+        <p class="lead">The voice behind cinematic concept albums spanning nu-metal and gothic rock.</p>
+        <p>Shara Rayne is an AI recording artist whose records are narrative works about betrayal, grief, and self-reclamation, moving from screamed catharsis to synthwave calm. Shara sings in English and Chinese and stars in the <em>Mark of the Flame</em> series.</p>
+        <p class="signature">Shara</p>
+        <div class="mini-socials">
+          <a class="mini" href="https://youtube.com/@SharaRayne" target="_blank" rel="noopener" aria-label="Shara Rayne on YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 00-1.98-1.98C18.75 4.75 12 4.75 12 4.75s-6.75 0-8.52.47A2.8 2.8 0 001.5 7.2C1.03 8.97 1.03 12 1.03 12s0 3.03.47 4.8a2.8 2.8 0 001.98 1.98c1.77.47 8.52.47 8.52.47s6.75 0 8.52-.47a2.8 2.8 0 001.98-1.98c.47-1.77.47-4.8.47-4.8s0-3.03-.47-4.8zM9.75 15.25v-6.5l5.5 3.25-5.5 3.25z"/></svg></a>
+          <a class="mini" href="https://open.spotify.com/artist/1nV1VkS5G78v4S1O9v3PlQ?si=vGrutT7mTyKKQhVSIwZJmg" target="_blank" rel="noopener" aria-label="Shara Rayne on Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.82-.87 7.09-.5 9.72 1.11.3.18.39.57.21.86zm1.23-2.74a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.37.23.48.71.25 1.07zm.11-2.85C14.72 8.94 9.5 8.76 6.42 9.7a.93.93 0 11-.54-1.79c3.53-1.07 9.3-.86 12.97 1.32a.94.94 0 01-.96 1.61z"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <p class="roster-note reveal">Are you an AI artist? We'd love to collaborate. <a href="mailto:info@courtofloverecords.com?subject=AI%20Artist%20Collaboration">Reach out to join the court</a></p>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== FOUNDER ===================== -->
+<section id="founders">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Los Fundadores &middot; The Founders</span>
+      <h2>Meet the founders</h2>
+      <p class="es" lang="es">La visión detrás de la corte.</p>
+    </div>
+
+    <div class="founder reveal">
+      <div class="monogram" aria-hidden="true">DC</div>
+      <span class="role">Founder</span>
+      <h3 class="person-name">DC</h3>
+      <!-- EDIT: founder bio -->
+      <p>DC has spent a decade in tech, working across media, e-commerce, and affiliate and influencer marketing. Court of Love Records brings that experience to a love of storytelling, using AI tools to empower creatives and show just how far storytelling can go.</p>
+      <p>DC writes, films, and edits every release. Reina Acevedo is DC's creative alter ego: the hopeless romantic who sings, writes, and makes films, given a voice and a face through AI.</p>
+
+      <figure class="belief">
+        <blockquote>We believe AI isn't a cheat code. It's a way for anyone with a vision to turn it into reality, without the roadblocks.</blockquote>
+        <cite>DC, Founder</cite>
+      </figure>
+    </div>
+
+    <svg class="founder-sep reveal" viewBox="0 0 80 16" fill="none" aria-hidden="true">
+      <circle cx="12" cy="8" r="2" fill="currentColor"/>
+      <path d="M40 14c-4-3-6.7-5.3-6.7-8 0-2 1.7-3.3 3.7-3.3 1.3 0 2.5.7 3 1.7.5-1 1.7-1.7 3-1.7 2 0 3.7 1.3 3.7 3.3 0 2.7-2.7 5-6.7 8Z" fill="currentColor"/>
+      <circle cx="68" cy="8" r="2" fill="currentColor"/>
+    </svg>
+
+    <div class="founder reveal">
+      <div class="monogram" aria-hidden="true">RC</div>
+      <span class="role">Co-Founder</span>
+      <h3 class="person-name">RC</h3>
+      <!-- EDIT: co-founder bio -->
+      <p>RC spent a decade in the media industry before taking that experience into music production, where he works under the moniker <strong class="moniker">RG4M3</strong>. As co-founder, he leads the business side of the label, guiding key decisions and heading up outreach to the artists, creators, and partners we collaborate with.</p>
+      <div class="mini-socials center">
+        <a class="mini" href="https://instagram.com/rg4m3.music" target="_blank" rel="noopener" aria-label="RG4M3 on Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="mini" href="https://www.facebook.com/RG4M3" target="_blank" rel="noopener" aria-label="RG4M3 on Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6C16.6 2.5 15.6 2.4 14.5 2.4c-2.4 0-4 1.4-4 4.1V8.5H8v3h2.5V22h3.5v-10.5h2.6l.4-3z"/></svg></a>
+        <a class="mini" href="https://www.youtube.com/@rg4m3" target="_blank" rel="noopener" aria-label="RG4M3 on YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 00-1.98-1.98C18.75 4.75 12 4.75 12 4.75s-6.75 0-8.52.47A2.8 2.8 0 001.5 7.2C1.03 8.97 1.03 12 1.03 12s0 3.03.47 4.8a2.8 2.8 0 001.98 1.98c1.77.47 8.52.47 8.52.47s6.75 0 8.52-.47a2.8 2.8 0 001.98-1.98c.47-1.77.47-4.8.47-4.8s0-3.03-.47-4.8zM9.75 15.25v-6.5l5.5 3.25-5.5 3.25z"/></svg></a>
+        <a class="mini" href="https://open.spotify.com/artist/4UiEDraA0WMyfG1zWnZ8ml?si=RoyILKEwRGWCNpkVk8GhAQ" target="_blank" rel="noopener" aria-label="RG4M3 on Spotify" title="Spotify"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.82-.87 7.09-.5 9.72 1.11.3.18.39.57.21.86zm1.23-2.74a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.37.23.48.71.25 1.07zm.11-2.85C14.72 8.94 9.5 8.76 6.42 9.7a.93.93 0 11-.54-1.79c3.53-1.07 9.3-.86 12.97 1.32a.94.94 0 01-.96 1.61z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== INQUIRIES ===================== -->
+<section id="inquiries">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Contacto &middot; Inquiries</span>
+      <h2>Let's make something together</h2>
+      <p class="es" lang="es">Colaboraciones, encargos y prensa.</p>
+    </div>
+
+    <div class="inquiry reveal">
+      <p>For inquiries, please reach out</p>
+      <a class="email" href="mailto:info@courtofloverecords.com">info@courtofloverecords.com</a>
+      <div>
+        <a class="btn-gold" href="mailto:info@courtofloverecords.com?subject=Inquiry%20for%20Court%20of%20Love%20Records">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>
+          Email us
+        </a>
+      </div>
+      <p class="fine">Collaborations, commissions, licensing, and press.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="divider reveal" viewBox="0 0 220 24" fill="none" aria-hidden="true">
+  <path d="M0 12h86M134 12h86" stroke="currentColor" stroke-width="1"/>
+  <path d="M110 20c-6-4.5-10-8-10-12 0-3 2.5-5 5.5-5 2 0 3.7 1 4.5 2.6.8-1.6 2.5-2.6 4.5-2.6 3 0 5.5 2 5.5 5 0 4-4 7.5-10 12Z" fill="currentColor"/>
+  <circle cx="92" cy="12" r="2" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/>
+</svg>
+
+<!-- ===================== FOLLOW / SOCIAL ===================== -->
+<section id="follow">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" lang="es">Síguenos &middot; Follow Along</span>
+      <h2>Follow the court</h2>
+      <p class="es" lang="es">New releases, behind the scenes, and what we're building next.</p>
+    </div>
+
+    <div class="socials reveal">
+      <a class="seal" href="https://instagram.com/courtofloverecords" target="_blank" rel="noopener" aria-label="Court of Love Records on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span class="label">Instagram</span>
+      </a>
+      <a class="seal" href="https://tiktok.com/@courtofloverecords" target="_blank" rel="noopener" aria-label="Court of Love Records on TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.5a2.75 2.75 0 11-2.75-2.75c.28 0 .55.04.8.12v-3.06a5.8 5.8 0 00-.8-.06 5.8 5.8 0 105.8 5.8V9.13a7 7 0 004.2 1.4V7.5a4 4 0 01-4.05-4.05c-.13-.44-.2-.9-.2-1.45z"/></svg>
+        <span class="label">TikTok</span>
+      </a>
+      <a class="seal" href="https://youtube.com/@courtofloverecords" target="_blank" rel="noopener" aria-label="Court of Love Records on YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 00-1.98-1.98C18.75 4.75 12 4.75 12 4.75s-6.75 0-8.52.47A2.8 2.8 0 001.5 7.2C1.03 8.97 1.03 12 1.03 12s0 3.03.47 4.8a2.8 2.8 0 001.98 1.98c1.77.47 8.52.47 8.52.47s6.75 0 8.52-.47a2.8 2.8 0 001.98-1.98c.47-1.77.47-4.8.47-4.8s0-3.03-.47-4.8zM9.75 15.25v-6.5l5.5 3.25-5.5 3.25z"/></svg>
+        <span class="label">YouTube</span>
+      </a>
+      <a class="seal" href="https://www.facebook.com/courtofloverecords" target="_blank" rel="noopener" aria-label="Court of Love Records on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6C16.6 2.5 15.6 2.4 14.5 2.4c-2.4 0-4 1.4-4 4.1V8.5H8v3h2.5V22h3.5v-10.5h2.6l.4-3z"/></svg>
+        <span class="label">Facebook</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <svg class="mark" aria-hidden="true"><use href="#mark"/></svg>
+    <div class="fscript" lang="es">Hecho con el corazón</div>
+    <p class="fine">&copy; <span id="year"></span> Court of Love Records &middot; Founded by DC &amp; RC &middot; All rights reserved</p>
+    <a class="top" href="#top">Back to top &middot; Volver arriba</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll reveals
+  if ('IntersectionObserver' in window && !reduce){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+
+  // rising hearts and music notes
+  if(!reduce){
+    const heart = '<path d="M12 21C6 16.5 2 13 2 8.5 2 5.4 4.4 3 7.5 3 9.5 3 11.3 4 12 5.6 12.7 4 14.5 3 16.5 3 19.6 3 22 5.4 22 8.5 22 13 18 16.5 12 21Z" fill="currentColor"/>';
+    const note  = '<path d="M9 17.5V5l11-2v12.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="6.5" cy="17.5" r="2.8" fill="currentColor"/><circle cx="17.5" cy="15.5" r="2.8" fill="currentColor"/>';
+    const make = ()=>{
+      const p = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      p.setAttribute('class','petal');
+      p.setAttribute('viewBox','0 0 24 24');
+      const size = 8 + Math.random()*12;
+      p.style.width = size+'px'; p.style.height = size+'px';
+      p.style.left = Math.random()*100 + 'vw';
+      p.style.opacity = 0.10 + Math.random()*0.22;
+      p.innerHTML = Math.random() > .35 ? heart : note;
+      p.style.color = Math.random() > .5 ? '#b01e34' : '#c9a24b';
+      document.body.appendChild(p);
+      const dur = 9000 + Math.random()*9000;
+      const drift = (Math.random()*120 - 60);
+      p.animate([
+        {transform:'translate(0, 0) rotate(0deg)'},
+        {transform:`translate(${drift}px, -110vh) rotate(${Math.random()*360}deg)`}
+      ],{duration:dur, easing:'linear'});
+      setTimeout(()=>p.remove(), dur);
+    };
+    setInterval(make, 1600);
+    for(let i=0;i<4;i++) setTimeout(make, i*500);
+  }
+</script>
+</body>
+</html>
