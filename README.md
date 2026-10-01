@@ -22,7 +22,7 @@ We believe AI isn't a cheat code. It's a way for anyone with a vision to turn it
 ### Roster
 
 - **Reina Acevedo**, AI Creative Director, Artist, Author & Filmmaker. The hopeless-romantic side of DC, brought to life with AI. Sings in English, Spanish, and Hindi.
-- **Shara Rayne**, AI Recording Artist. Cinematic concept albums spanning nu-metal and gothic rock. Sings in English and Chinese.
+- **Shara Rayne**, AI Recording Artist. A breathy, angelic soprano across nu-metal, gothic rock, dark-pop, and Mandopop. Written and produced by RG4M3. Stars in the film series *Mark of the Flame*.
 
 ### Our stack
 
@@ -34,7 +34,9 @@ Higgsfield AI (film and image), Suno (music), Claude (story and direction), Chat
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The entire site: HTML, CSS, and JavaScript in one file |
+| `index.html` | The main site: HTML, CSS, and JavaScript in one file |
+| `privacy.html` | Privacy Policy, linked in the footer |
+| `terms.html` | Terms of Service, linked in the footer |
 | `CNAME` | Custom domain for GitHub Pages (`courtofloverecords.com`) |
 | `preview.png` | Social share image shown when the link is posted (1200×630) |
 | `reina-acevedo.jpg` | Roster photo for Reina (800×1000, 4:5) |
@@ -43,7 +45,9 @@ Higgsfield AI (film and image), Suno (music), Claude (story and direction), Chat
 | `never-met-always-known.jpg` | Project thumbnail (16:9) |
 | `distance-within-time.jpg` | Project thumbnail (16:9) |
 
-The site has no build step, framework, or dependencies. Fonts load from Google Fonts; everything else is in `index.html`.
+The site has no build step, framework, or dependencies. Fonts load from Google Fonts; everything else is in the HTML files.
+
+If you add a newsletter sign-up, analytics, or anything else that collects visitor data, update `privacy.html` first and change its effective date.
 
 ---
 

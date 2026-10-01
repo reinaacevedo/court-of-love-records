@@ -8,13 +8,13 @@
      Court of Love Records — Production Company Landing Page
      Built for GitHub Pages. Put these files in the repo root:
        index.html, CNAME, mark-of-the-flame.jpg, never-met-always-known.jpg,
-       distance-within-time.jpg, reina-acevedo.jpg, shara-rayne.jpg
+       distance-within-time.jpg, reina-acevedo.jpg, shara-rayne.jpg, preview.png,
+       privacy.html, terms.html
 
      THINGS TO PERSONALIZE (search for the word  EDIT: ):
        1. Social links      -> the <a> hrefs in the "Follow Along" section
        2. Project links     -> the three project cards
-       4. Founder bios      -> the paragraphs in "The Founders"
-       5. Share preview     -> og:image (add a 1200x630 preview.png)
+       3. Founder bios      -> the paragraphs in "The Founders"
      ============================================================ -->
 
 <title>Court of Love Records · AI Music, Film & Stories</title>
@@ -345,6 +345,9 @@
   footer .fine{font-size:.78rem; color:var(--parchment-dim); letter-spacing:.06em; margin-top:.6rem}
   footer a.top{display:inline-block; margin-top:1.2rem; font-family:"Cinzel",serif; font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid transparent}
   footer a.top:hover{border-bottom-color:var(--gold)}
+  footer .legal{display:flex; justify-content:center; gap:.7rem; margin-top:1rem; font-size:.82rem; color:var(--parchment-dim)}
+  footer .legal a{color:var(--parchment-dim); text-decoration:none; border-bottom:1px solid rgba(201,162,75,.3)}
+  footer .legal a:hover{color:var(--gold-glow); border-bottom-color:var(--gold-glow)}
 
   .petal{position:fixed; bottom:-30px; z-index:0; pointer-events:none; will-change:transform,opacity}
 
@@ -510,7 +513,7 @@
       <div class="pillar">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="12" stroke-opacity=".5"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
         <h3>AI Music</h3>
-        <p>Original songs and reimagined covers that move between flamenco, bolero, Bollywood rhythms, rock, metal, and dark pop, sung in English, Spanish, and Hindi.</p>
+        <p>Original songs and reimagined covers that cross genres and borders, from Latin and Bollywood rhythms to gothic rock, dark pop, and Mandopop, sung in English, Spanish, Hindi, and Mandarin.</p>
       </div>
       <div class="pillar">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="14" width="28" height="22" rx="2"/><path d="M33 21l10-6v18l-10-6z"/><path d="M5 14l4-6h8l-4 6M17 14l4-6h8l-4 6" stroke-opacity=".6"/></svg>
@@ -693,8 +696,8 @@
           <span class="chip">Film</span>
         </div>
         <!-- EDIT: Shara's roster bio -->
-        <p class="lead">The voice behind cinematic concept albums spanning nu-metal and gothic rock.</p>
-        <p>Shara Rayne is an AI recording artist whose records are narrative works about betrayal, grief, and self-reclamation, moving from screamed catharsis to synthwave calm. Shara sings in English and Chinese and stars in the <em>Mark of the Flame</em> series.</p>
+        <p class="lead">Shara Rayne is an AI vocalist known for a breathy, angelic soprano and lush stacked harmonies that never belt, never scream, and never change.</p>
+        <p>She carries that voice across nu-metal, gothic rock, dark-pop and Mandarin-language Mandopop, with roots in synthwave, dream-pop and trance. Her songs are about grief, complicated love and finding your own name, written and produced by <strong class="moniker">RG4M3</strong>. She also stars in the film series <em>Mark of the Flame</em>.</p>
         <p class="signature">Shara</p>
         <div class="mini-socials">
           <a class="mini" href="https://youtube.com/@SharaRayne" target="_blank" rel="noopener" aria-label="Shara Rayne on YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 00-1.98-1.98C18.75 4.75 12 4.75 12 4.75s-6.75 0-8.52.47A2.8 2.8 0 001.5 7.2C1.03 8.97 1.03 12 1.03 12s0 3.03.47 4.8a2.8 2.8 0 001.98 1.98c1.77.47 8.52.47 8.52.47s6.75 0 8.52-.47a2.8 2.8 0 001.98-1.98c.47-1.77.47-4.8.47-4.8s0-3.03-.47-4.8zM9.75 15.25v-6.5l5.5 3.25-5.5 3.25z"/></svg></a>
@@ -829,6 +832,11 @@
     <svg class="mark" aria-hidden="true"><use href="#mark"/></svg>
     <div class="fscript">Made from the heart</div>
     <p class="fine">&copy; <span id="year"></span> Court of Love Records &middot; Founded by DC &amp; RC &middot; All rights reserved</p>
+    <nav class="legal" aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
     <a class="top" href="#top">Back to top</a>
   </div>
 </footer>
