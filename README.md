@@ -45,44 +45,6 @@ Higgsfield AI (film and image), Suno (music), Claude (story and direction), Chat
 | `never-met-always-known.jpg` | Project thumbnail (16:9) |
 | `distance-within-time.jpg` | Project thumbnail (16:9) |
 
-The site has no build step, framework, or dependencies. Fonts load from Google Fonts; everything else is in the HTML files.
-
-If you add a newsletter sign-up, analytics, or anything else that collects visitor data, update `privacy.html` first and change its effective date.
-
----
-
-## Editing the site
-
-Open `index.html` and search for `EDIT:` to find the spots meant to be personalized. Sections appear in this order: Hero, Mission, What We Do, Our Stack, Recent Work, The Roster, The Founders, Inquiries, Follow Along.
-
-**Swap a project.** Find the `<article class="film-card">` blocks in the Recent Work section. Change the link, thumbnail filename, badge, title, and logline, then upload the new thumbnail at 16:9 (1280×720 works well).
-
-**Add an artist to the roster.** Copy an existing `<article class="artist ...">` block in The Roster section and paste it below the last one. Add or remove `flip` in the class to alternate which side the photo sits on. Roster photos should be 4:5 portraits (800×1000).
-
-**Update social links.** Company links are in the Follow Along section; artist and co-founder links are in the small round buttons inside each card.
-
-**Refresh the share image.** Replace `preview.png` with a new 1200×630 image using the same filename. Social platforms cache previews, so run the URL through the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) and click "Scrape Again" to update it.
-
-Keep image files under about 300 KB where possible so the page loads quickly on phones.
-
----
-
-## Hosting
-
-Hosted on GitHub Pages from the `main` branch, root folder.
-
-**DNS records** (set at the domain registrar):
-
-| Type | Host | Value |
-| --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `reinaacevedo.github.io` |
-
-Under **Settings → Pages**, the custom domain is `courtofloverecords.com` with **Enforce HTTPS** enabled.
-
 ---
 
 ## Contact
